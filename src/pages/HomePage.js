@@ -1,18 +1,16 @@
 import RobotDisplay from "../components/RobotDisplay/RobotDisplay";
+import { useEffect } from "react";
+import { getRobotsThunk } from "../redux/thunks/robotsThunks";
+import { useDispatch, useSelector } from "react-redux";
 
 const HomePage = () => {
-  const robots = [
-    {
-      characteristics: {
-        velocity: 9,
-        resistance: 7,
-        creation_date: "2008-07-27T22:00:00.000Z",
-      },
-      _id: "620ff2abff9cc04b0bdd6556",
-      name: "Lorenzo",
-      url: "https://cdna.artstation.com/p/assets/images/images/029/711/108/large/jessica-sheng-rendered-img1.jpg?1598405014&dl=1",
-    },
-  ];
+  const dispatch = useDispatch();
+
+  const robots = useSelector((state) => state.robots);
+
+  useEffect(() => {
+    dispatch(getRobotsThunk);
+  }, [dispatch]);
 
   return (
     <>
