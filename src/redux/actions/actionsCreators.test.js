@@ -1,5 +1,6 @@
 import actionsTypes from "./actionsTypes";
 import {
+  deleteRobotAction,
   getARobotAction,
   getRobotsAction,
   robotCharacteristicsAction,
@@ -90,6 +91,23 @@ describe("Given a robotCharacteristicsAction function", () => {
       const action = robotCharacteristicsAction(characteristics);
 
       expect(action).toEqual(expectedAction);
+    });
+  });
+});
+
+describe("Given a deleteRobotAction function", () => {
+  describe("When it receives id 1", () => {
+    test("Then it should return action with id 1", () => {
+      const id = 1;
+
+      const expectedAction = {
+        type: actionsTypes.deleteRobot,
+        id,
+      };
+
+      const action = deleteRobotAction(id);
+
+      expect(expectedAction).toEqual(action);
     });
   });
 });
