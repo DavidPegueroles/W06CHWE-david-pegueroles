@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import styled from "styled-components";
 import HomePage from "./pages/HomePage/HomePage";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import RobotPage from "./pages/RobotPage/RobotPage";
 
 const H1 = styled.h1`
@@ -18,6 +19,7 @@ function App() {
           <Route index element={<HomePage />} />
         </Route>
         <Route path="/robots/:idRobot" element={<RobotPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>
   );
