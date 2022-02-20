@@ -72,8 +72,8 @@ describe("Given a getARobotAction function", () => {
 });
 
 describe("Given a robotCharacteristicsAction function", () => {
-  describe("When it receives the robot 'Luis'", () => {
-    test("Then the action should have 'Luis' robot", () => {
+  describe("When it receives the characteristics object", () => {
+    test("Then the action should have characteristics object", () => {
       const characteristics = {
         characteristics: {
           velocity: 9,
