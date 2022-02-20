@@ -26,6 +26,15 @@
     "eject": "react-scripts eject",
     "prepare": "husky install"
   },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/**/*.test.js",
+      "!src/index.js",
+      "!src/reportWebVitals.js",
+      "!src/setupTests.js"
+    ]
+  },
   "eslintConfig": {
     "extends": [
       "react-app",

@@ -9,7 +9,6 @@ const LI = styled.li`
 
   list-style: none;
   width: 85vw;
-  height: 480px;
   margin: 20px;
   padding: 0;
   padding-bottom: 30px;
@@ -23,15 +22,24 @@ const LI = styled.li`
 
   h3 {
     align-self: flex-start;
-    margin: 0;
+    margin: 20px;
     padding: 0;
     margin-left: 20px;
     margin-bottom: 10px;
   }
+
+  h4 {
+    font-size: 25px;
+    margin: 10px;
+    padding: 0;
+  }
 `;
 
 const Image = styled.img`
-  width: 80vw;
+  width: 90%;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
 
   box-shadow: 5px 10px 20px 3px rgba(0, 0, 0, 0.5);
 `;
@@ -54,7 +62,7 @@ const RobotDisplay = ({
         <li>Resistance: {resistance}</li>
         <li>Date of creation: {creation_date}</li>
       </ul>
-      <Button actionOnClick={actionOnClick} text="Details" />
+      <Button actionOnClick={actionOnClick} text="Details" type={"details"} />
     </LI>
   );
 };
