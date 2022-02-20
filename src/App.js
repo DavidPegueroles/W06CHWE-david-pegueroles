@@ -1,12 +1,16 @@
 import { Navigate, Route, Routes } from "react-router-dom";
+import styled from "styled-components";
 import HomePage from "./pages/HomePage/HomePage";
 import RobotPage from "./pages/RobotPage/RobotPage";
+
+const H1 = styled.h1`
+  margin-left: 20px;
+`;
 
 function App() {
   return (
     <>
-      <h1>Site under construction. Please come again later...</h1>
-      <img src="favicon.png" alt="Sad Wall-E eyes" />
+      <H1>Welcome to super robots</H1>
 
       <Routes>
         <Route path="/" element={<Navigate to="/robots" />} />
