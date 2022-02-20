@@ -14,3 +14,8 @@ export const robotCharacteristicsAction = (characteristics) => ({
   type: actionsTypes.robotCharacteristics,
   characteristics,
 });
+
+export const deleteRobotAction = (id) => ({
+  type: actionsTypes.deleteRobot,
+  id,
+});
