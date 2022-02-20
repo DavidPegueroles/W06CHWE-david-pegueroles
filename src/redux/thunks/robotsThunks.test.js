@@ -1,4 +1,8 @@
-import { getARobotThunk, getRobotsThunk } from "./robotsThunks";
+import {
+  deleteRobotThunk,
+  getARobotThunk,
+  getRobotsThunk,
+} from "./robotsThunks";
 
 describe("Given a getRobotsThunk function", () => {
   describe("When it is called", () => {
@@ -23,6 +27,34 @@ describe("Given a getARobotThunk function", () => {
       await getARobot(dispatch);
 
       expect(dispatch).toHaveBeenCalled();
+    });
+  });
+});
+
+describe("Given a deleteRobotThunk inner function", () => {
+  describe("When it is called with id 1", () => {
+    test("Then it should call the dispatch", async () => {
+      const dispatch = jest.fn();
+      const id = 1;
+
+      const deleteThunk = deleteRobotThunk(id);
+
+      await deleteThunk(dispatch);
+
+      expect(dispatch).toHaveBeenCalled();
+    });
+  });
+
+  describe("When it is called with id 3", () => {
+    test("Then it should not call the dispatch", async () => {
+      const dispatch = jest.fn();
+      const id = 3;
+
+      const deleteThunk = deleteRobotThunk(id);
+
+      await deleteThunk(dispatch);
+
+      expect(dispatch).not.toHaveBeenCalled();
     });
   });
 });
