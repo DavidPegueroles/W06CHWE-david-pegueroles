@@ -42,7 +42,7 @@ describe("Given a robotsReducer function", () => {
 
   describe("When it receives currentRobots and a non existing action with robots 'Luis' and 'Marta'", () => {
     test("Then it should return currentRobots", () => {
-      const currentTasks = [];
+      const currentRobots = [];
 
       const robots = [
         {
@@ -72,9 +72,9 @@ describe("Given a robotsReducer function", () => {
         robots,
       };
 
-      const reducerResult = robotsReducer(currentTasks, action);
+      const reducerResult = robotsReducer(currentRobots, action);
 
-      expect(reducerResult).toEqual(currentTasks);
+      expect(reducerResult).toEqual(currentRobots);
     });
   });
 

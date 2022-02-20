@@ -1,5 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import HomePage from "./pages/HomePage";
+import HomePage from "./pages/HomePage/HomePage";
+import RobotPage from "./pages/RobotPage/RobotPage";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/robots">
           <Route index element={<HomePage />} />
         </Route>
+        <Route path="/robots/:idRobot" element={<RobotPage />} />
       </Routes>
     </>
   );
