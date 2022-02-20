@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Button from "../Button/Button";
 
 const LI = styled.li`
   background-color: #002f38;
@@ -41,6 +42,7 @@ const RobotDisplay = ({
     name,
     characteristics: { velocity, resistance, creation_date },
   },
+  actionOnClick,
 }) => {
   return (
     <LI>
@@ -52,6 +54,7 @@ const RobotDisplay = ({
         <li>Resistance: {resistance}</li>
         <li>Date of creation: {creation_date}</li>
       </ul>
+      <Button actionOnClick={actionOnClick} text="Details" />
     </LI>
   );
 };
