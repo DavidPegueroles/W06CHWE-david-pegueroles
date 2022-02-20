@@ -4,7 +4,7 @@ import renderWithProviders from "../../setupTests";
 import HomePage from "./HomePage";
 
 describe("Given a HomePage component", () => {
-  describe("When it's rendered", () => {
+  describe("When it's rendered with providers", () => {
     test("Then it should display a heading with the text robots list", () => {
       renderWithProviders(
         <BrowserRouter>

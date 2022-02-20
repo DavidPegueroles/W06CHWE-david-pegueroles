@@ -48,4 +48,10 @@ export const handlers = [
       })
     )
   ),
+  rest.delete(`${process.env.REACT_APP_API_ROBOTS}delete/1`, (req, res, ctx) =>
+    res(ctx.status(202), ctx.json({}))
+  ),
+  rest.delete(`${process.env.REACT_APP_API_ROBOTS}delete/3`, (req, res, ctx) =>
+    res(ctx.status(404))
+  ),
 ];

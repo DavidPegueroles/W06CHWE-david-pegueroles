@@ -40,6 +40,57 @@ describe("Given a robotsReducer function", () => {
     });
   });
 
+  describe("When it receives currentRobots with 'Luis' & 'Marta', and deleteRobot action with id 2", () => {
+    test("Then it should return robots 'Luis'", () => {
+      const currentRobots = [
+        {
+          characteristics: {
+            velocity: 9,
+            resistance: 7,
+            creation_date: "",
+          },
+          _id: 1,
+          name: "Luis",
+          url: "",
+        },
+        {
+          characteristics: {
+            velocity: 9,
+            resistance: 7,
+            creation_date: "",
+          },
+          _id: 2,
+          name: "Marta",
+          url: "",
+        },
+      ];
+
+      const id = 2;
+
+      const action = {
+        type: actionsTypes.deleteRobot,
+        id,
+      };
+
+      const expectedRobots = [
+        {
+          characteristics: {
+            velocity: 9,
+            resistance: 7,
+            creation_date: "",
+          },
+          _id: 1,
+          name: "Luis",
+          url: "",
+        },
+      ];
+
+      const reducerResult = robotsReducer(currentRobots, action);
+
+      expect(reducerResult).toEqual(expectedRobots);
+    });
+  });
+
   describe("When it receives currentRobots and a non existing action with robots 'Luis' and 'Marta'", () => {
     test("Then it should return currentRobots", () => {
       const currentRobots = [];

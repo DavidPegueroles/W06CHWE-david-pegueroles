@@ -1,6 +1,9 @@
 import RobotDisplay from "../../components/RobotDisplay/RobotDisplay";
 import { useEffect } from "react";
-import { getRobotsThunk } from "../../redux/thunks/robotsThunks";
+import {
+  deleteRobotThunk,
+  getRobotsThunk,
+} from "../../redux/thunks/robotsThunks";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
@@ -29,6 +32,10 @@ const HomePage = () => {
     navigate(`/robots/${id}`);
   };
 
+  const deleteRobot = (id) => {
+    dispatch(deleteRobotThunk(id));
+  };
+
   useEffect(() => {
     dispatch(getRobotsThunk);
   }, [dispatch]);
@@ -43,6 +50,9 @@ const HomePage = () => {
             robot={robot}
             actionOnClick={() => {
               robotDetails(robot._id);
+            }}
+            deleteOnClick={() => {
+              deleteRobot(robot._id);
             }}
           />
         ))}

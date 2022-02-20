@@ -1,4 +1,5 @@
 import {
+  deleteRobotAction,
   getARobotAction,
   getRobotsAction,
   robotCharacteristicsAction,
@@ -17,4 +18,16 @@ export const getARobotThunk = (id) => async (dispatch) => {
 
   dispatch(robotCharacteristicsAction(robot.robot.characteristics));
   dispatch(getARobotAction(robot.robot));
+};
+
+export const deleteRobotThunk = (id) => async (dispatch) => {
+  const response = await fetch(
+    `${process.env.REACT_APP_API_ROBOTS}delete/${id}`,
+    {
+      method: "DELETE",
+    }
+  );
+  if (response.ok) {
+    dispatch(deleteRobotAction(id));
+  }
 };
