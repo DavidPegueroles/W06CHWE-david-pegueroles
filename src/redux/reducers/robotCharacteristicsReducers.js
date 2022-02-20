@@ -3,12 +3,10 @@ import actionsTypes from "../actions/actionsTypes";
 const robotCharacteristicsReducers = (characteristics = [], action = {}) => {
   let newCharacteristics;
 
-  switch (action.type) {
-    case actionsTypes.robotCharacteristics:
-      newCharacteristics = action.characteristics;
-      break;
-    default:
-      newCharacteristics = characteristics;
+  if (action.type === actionsTypes.robotCharacteristics) {
+    newCharacteristics = action.characteristics;
+  } else {
+    newCharacteristics = characteristics;
   }
 
   return newCharacteristics;

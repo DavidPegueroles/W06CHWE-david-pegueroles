@@ -3,12 +3,10 @@ import actionsTypes from "../actions/actionsTypes";
 const aRobotReducers = (robot = [], action = {}) => {
   let newRobot;
 
-  switch (action.type) {
-    case actionsTypes.getARobot:
-      newRobot = action.robot;
-      break;
-    default:
-      newRobot = robot;
+  if (action.type === actionsTypes.getARobot) {
+    newRobot = action.robot;
+  } else {
+    newRobot = robot;
   }
 
   return newRobot;
