@@ -5,10 +5,10 @@ const aRobotReducers = (robot = [], action = {}) => {
 
   switch (action.type) {
     case actionsTypes.getARobot:
-      newRobot = [...action.robot];
+      newRobot = action.robot;
       break;
     default:
-      newRobot = [...robot];
+      newRobot = robot;
   }
 
   return newRobot;
