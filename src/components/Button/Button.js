@@ -28,6 +28,21 @@ const DeleteButton = styled.button`
 
   cursor: pointer;
 `;
+const BackButton = styled.button`
+  align-self: center;
+
+  background-color: transparent;
+  color: white;
+  border: 5px solid white;
+  border-radius: 10px;
+  font-size: 20px;
+
+  width: 150px;
+  height: 40px;
+  margin: 30px;
+
+  cursor: pointer;
+`;
 
 const Button = ({ type, text, actionOnClick }) => {
   if (type === "details") {
@@ -35,7 +50,7 @@ const Button = ({ type, text, actionOnClick }) => {
   } else if (type === "delete") {
     return <DeleteButton onClick={actionOnClick}>{text}</DeleteButton>;
   } else {
-    return <button onClick={actionOnClick}>{text}</button>;
+    return <BackButton onClick={actionOnClick}>{text}</BackButton>;
   }
 };
 
