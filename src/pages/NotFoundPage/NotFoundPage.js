@@ -5,7 +5,8 @@ export const Section = styled.section`
   margin-left: 30px;
 
   h2 {
-    font-size: 50px;
+    font-size: 150px;
+    margin: 0;
   }
   p {
     font-size: 30px;
