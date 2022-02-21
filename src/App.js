@@ -5,7 +5,7 @@ import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import RobotPage from "./pages/RobotPage/RobotPage";
 
 const H1 = styled.h1`
-  margin-left: 20px;
+  margin: 30px;
 `;
 
 function App() {

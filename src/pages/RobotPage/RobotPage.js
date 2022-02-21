@@ -10,19 +10,42 @@ const Section = styled.section`
   justify-content: center;
   align-items: flex-start;
 
-  h3,
-  h4,
-  ul {
+  h3 {
+    align-self: flex-start;
+    margin: 20px;
     margin-left: 5vw;
+    margin-bottom: 10px;
+    padding: 0;
+    font-size: 25px;
+  }
+
+  h4 {
+    font-size: 25px;
+    margin: 10px;
+    margin-left: 8vw;
+    padding: 0;
+  }
+
+  ul {
+    margin: 10px;
+    margin-top: 0;
+    margin-bottom: 50px;
+    margin-left: 15vw;
+    padding: 0;
+
+    li {
+      margin: 10px;
+      font-size: 20px;
+    }
   }
 `;
 
 const Image = styled.img`
   align-self: center;
-  width: 90%;
+  width: 90vw;
 
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 
   box-shadow: 5px 10px 20px 3px rgba(0, 0, 0, 0.5);
 `;

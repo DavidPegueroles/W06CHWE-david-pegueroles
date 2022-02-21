@@ -10,8 +10,7 @@ const DetailsButton = styled.button`
   width: 150px;
   height: 40px;
 
-  margin: 25px;
-  margin-bottom: 10px;
+  margin: 10px;
 
   cursor: pointer;
 `;
@@ -25,10 +24,7 @@ const DeleteButton = styled.button`
   width: 150px;
   height: 40px;
 
-  margin: 25px;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: 10px;
+  margin: 10px;
 
   cursor: pointer;
 `;

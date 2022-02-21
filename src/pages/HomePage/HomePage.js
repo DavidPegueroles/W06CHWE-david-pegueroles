@@ -9,7 +9,7 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
 const H2 = styled.h2`
-  margin-left: 30px;
+  margin-left: 50px;
 `;
 
 const UL = styled.ul`
