@@ -8,7 +8,7 @@ const LI = styled.li`
   outline: 2px solid black;
 
   list-style: none;
-  width: 85vw;
+  width: 65vw;
   margin: 20px;
   padding: 0;
   padding-bottom: 30px;
@@ -32,6 +32,22 @@ const LI = styled.li`
     font-size: 25px;
     margin: 10px;
     padding: 0;
+  }
+
+  ul {
+    padding: 0;
+    margin-left: 50px;
+    margin-right: 50px;
+    li {
+      margin: 0;
+    }
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
   }
 `;
 
@@ -58,11 +74,7 @@ const RobotDisplay = ({
       <h3>ROBOT</h3>
       <Image src={url} alt={name} />
       <h4>{name}</h4>
-      <ul>
-        <li>Velocity: {velocity}</li>
-        <li>Resistance: {resistance}</li>
-        <li>Date of creation: {creation_date}</li>
-      </ul>
+
       <div>
         <Button actionOnClick={actionOnClick} text="Details" type={"details"} />
         <Button actionOnClick={deleteOnClick} text="Delete" type={"delete"} />
