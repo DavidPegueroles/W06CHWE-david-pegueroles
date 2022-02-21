@@ -46,13 +46,13 @@ const HomePage = () => {
       <UL>
         {robots.map((robot) => (
           <RobotDisplay
-            key={robot._id}
+            key={robot.id}
             robot={robot}
             actionOnClick={() => {
-              robotDetails(robot._id);
+              robotDetails(robot.id);
             }}
             deleteOnClick={() => {
-              deleteRobot(robot._id);
+              deleteRobot(robot.id);
             }}
           />
         ))}
