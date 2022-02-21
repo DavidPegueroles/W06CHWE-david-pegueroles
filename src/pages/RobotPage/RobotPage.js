@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
+import Button from "../../components/Button/Button";
 import { getARobotThunk } from "../../redux/thunks/robotsThunks";
 
 const Section = styled.section`
@@ -29,7 +30,6 @@ const Section = styled.section`
   ul {
     margin: 10px;
     margin-top: 0;
-    margin-bottom: 50px;
     margin-left: 15vw;
     padding: 0;
 
@@ -54,8 +54,12 @@ const RobotPage = () => {
   const id = useParams();
 
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
   const { robot, characteristics } = useSelector((state) => state);
+
+  const backToHome = () => {
+    navigate("/robots");
+  };
 
   useEffect(() => {
     dispatch(getARobotThunk(id.idRobot));
@@ -71,6 +75,13 @@ const RobotPage = () => {
         <li>Resistance: {characteristics.resistance}</li>
         <li>Date of creation: {characteristics.creation_date}</li>
       </ul>
+      <Button
+        text="Back"
+        type="Back"
+        actionOnClick={() => {
+          backToHome();
+        }}
+      />
     </Section>
   );
 };
