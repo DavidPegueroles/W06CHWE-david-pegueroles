@@ -36,6 +36,8 @@ const Header = styled.header`
 function App() {
   const [counter, setCounter] = useState(0);
 
+  localStorage.setItem("robotsToken", process.env.REACT_APP_TOKEN);
+
   return (
     <>
       <Header>
