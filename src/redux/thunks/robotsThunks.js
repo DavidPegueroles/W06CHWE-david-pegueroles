@@ -22,10 +22,16 @@ export const getARobotThunk = (id) => async (dispatch) => {
 };
 
 export const deleteRobotThunk = (id) => async (dispatch) => {
+  const token = localStorage.getItem("robotsToken");
+
   const response = await fetch(
     `${process.env.REACT_APP_API_ROBOTS}delete/${id}`,
     {
       method: "DELETE",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
     }
   );
   if (response.ok) {
