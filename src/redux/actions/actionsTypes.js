@@ -3,6 +3,7 @@ const actionsTypes = {
   getARobot: "get-a-robot",
   robotCharacteristics: "robot-characteristics",
   deleteRobot: "delete-robot",
+  createRobot: "create-robot",
 };
 
 export default actionsTypes;
